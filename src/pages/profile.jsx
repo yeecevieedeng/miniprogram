@@ -55,9 +55,16 @@ function ProfileHeader(props) {
                       <span className="truncate">{displayEmail}</span>
                     </div>}
                 </div>
-              </div> : <div className="space-y-4">
+              </div> : <div className="space-y-4 w-full">
                 <h2 className="text-xl font-bold text-gray-800">未登录</h2>
                 <p className="text-sm text-gray-500">请登录以查看个人信息和享受会员权益</p>
+                <div className="w-full">
+                  <Button variant="default" size="lg" onClick={onWechatLogin} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 w-full rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 border-2 border-green-700">
+                    <LogIn className="w-6 h-6 mr-3" />
+                    <span className="text-base font-medium">微信一键登录</span>
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-400 text-center">登录后即可查看订单、管理地址等信息</p>
               </div>}
           </div>
         </div>
@@ -306,15 +313,6 @@ export default function Profile(props) {
           <h1 className="text-lg font-semibold text-center">个人中心</h1>
         </div>
       </div>
-
-      {/* 置顶的微信登录按钮 */}
-      {!isLoggedIn && <div className="px-4 pt-4">
-          <Button variant="default" size="lg" onClick={handleWechatLogin} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 w-full rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
-            <LogIn className="w-6 h-6 mr-3" />
-            <span className="text-base font-medium">微信一键登录</span>
-          </Button>
-          <p className="text-xs text-gray-400 text-center mt-2">登录后即可查看订单、管理地址等信息</p>
-        </div>}
 
       <ProfileHeader userData={userData} wechatData={wechatData} onEditProfile={handleEditProfile} onWechatLogin={handleWechatLogin} isLoading={isLoading} isLoggedIn={isLoggedIn} />
 
