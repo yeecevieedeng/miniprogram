@@ -1,0 +1,33 @@
+
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "当归羊肉汤",
+      "price": 88,
+      "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300",
+      "description": "滋补养生，温中补虚"
+    },
+    {
+      "id": 2,
+      "name": "枸杞鸽子汤",
+      "price": 128,
+      "image": "https://images.unsplash.com/photo-1559847844-d90f569e3166?w=300",
+      "description": "滋阴补肾，益气养血"
+    },
+    {
+      "id": 3,
+      "name": "山药排骨汤",
+      "price": 58,
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=300",
+      "description": "健脾养胃，补钙强身"
+    },
+    {
+      "id": 4,
+      "name": "花胶鸡汤",
+      "price": 168,
+      "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300",
+      "description": "美容养颜，滋阴润燥"
+    }
+  ]
+}

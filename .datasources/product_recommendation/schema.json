@@ -1,0 +1,50 @@
+
+{
+  "name": "product_recommendation",
+  "title": "产品推荐",
+  "schemas": [
+    {
+      "name": "products",
+      "title": "推荐产品列表",
+      "type": "Array",
+      "items": {
+        "type": "Object",
+        "properties": {
+          "id": {
+            "type": "Number",
+            "required": true,
+            "description": "产品唯一标识"
+          },
+          "name": {
+            "type": "String",
+            "required": true,
+            "description": "产品名称"
+          },
+          "price": {
+            "type": "Number",
+            "required": true,
+            "description": "产品价格"
+          },
+          "image": {
+            "type": "Image",
+            "required": true,
+            "description": "产品图片URL"
+          },
+          "description": {
+            "type": "String",
+            "required": true,
+            "description": "产品描述"
+          }
+        }
+      },
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_products",
+      "keys": ["products.id"],
+      "unique": false
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品下单 - 两列布局</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .product-card {
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .add-to-cart {
+      transition: all 0.2s ease;
+    }
+    .add-to-cart:hover {
+      background-color: #4f46e5;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="container mx-auto px-4 py-6">
+    <!-- 顶部搜索和筛选 -->
+    <div class="flex justify-between items-center mb-6">
+      <div class="relative w-full max-w-md">
+        <input type="text" placeholder="搜索商品..." 
+          class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+      </div>
+      <button class="ml-4 px-4 py-2 bg-white rounded-full border border-gray-300 flex items-center">
+        <i class="fas fa-filter text-gray-600 mr-2"></i>
+        <span>筛选</span>
+      </button>
+    </div>
+
+    <!-- 商品分类标签 -->
+    <div class="flex overflow-x-auto pb-4 mb-6 hide-scrollbar">
+      <div class="flex space-x-2">
+        <span class="px-4 py-1 bg-indigo-600 text-white rounded-full text-sm whitespace-nowrap">全部</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">热销</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">新品</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">折扣</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">水果</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">蔬菜</span>
+        <span class="px-4 py-1 bg-white border border-gray-200 rounded-full text-sm whitespace-nowrap">肉类</span>
+      </div>
+    </div>
+
+    <!-- 两列商品网格 -->
+    <div class="grid grid-cols-2 gap-4">
+      <!-- 商品卡片 1 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+               alt="新鲜苹果" class="w-full h-40 object-cover">
+          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">热销</span>
+        </div>
+        <div class="p-3">
+          <h3 class="font-medium text-gray-900 mb-1 truncate">红富士苹果</h3>
+          <p class="text-xs text-gray-500 mb-2">500g/份</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="text-red-500 font-bold">¥12.8</span>
+              <span class="text-xs text-gray-400 line-through ml-1">¥15.8</span>
+            </div>
+            <button class="add-to-cart w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品卡片 2 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+               alt="新鲜香蕉" class="w-full h-40 object-cover">
+        </div>
+        <div class="p-3">
+          <h3 class="font-medium text-gray-900 mb-1 truncate">进口香蕉</h3>
+          <p class="text-xs text-gray-500 mb-2">1kg/份</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="text-red-500 font-bold">¥9.9</span>
+            </div>
+            <button class="add-to-cart w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品卡片 3 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+               alt="新鲜橙子" class="w-full h-40 object-cover">
+          <span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">新品</span>
+        </div>
+        <div class="p-3">
+          <h3 class="font-medium text-gray-900 mb-1 truncate">赣南脐橙</h3>
+          <p class="text-xs text-gray-500 mb-2">1kg/份</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="text-red-500 font-bold">¥16.8</span>
+            </div>
+            <button class="add-to-cart w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品卡片 4 -->
+      <div class="product-card bg-white rounded-xl overflow-hidden shadow-md">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+               alt="新鲜葡萄" class="w-full h-40 object-cover">
+          <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">折扣</span>
+        </div>
+        <div class="p-3">
+          <h3 class="font-medium text-gray-900 mb-1 truncate">巨峰葡萄</h3>
+          <p class="text-xs text-gray-500 mb-2">500g/份</p>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="text-red-500 font-bold">¥19.9</span>
+              <span class="text-xs text-gray-400 line-through ml-1">¥24.9</span>
+            </div>
+            <button class="add-to-cart w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部购物车栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-3">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="relative">
+          <i class="fas fa-shopping-cart text-2xl text-gray-700"></i>
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+        </div>
+        <div class="text-gray-700">
+          <span class="font-medium">总计:</span>
+          <span class="text-red-500 font-bold ml-1">¥49.5</span>
+        </div>
+        <button class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium">去结算</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 添加商品到购物车
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = productCard.querySelector('.text-red-500').textContent;
+        
+        // 这里可以添加实际的购物车逻辑
+        console.log(`已添加 ${productName} 到购物车，价格: ${productPrice}`);
+        
+        // 简单的动画反馈
+        this.innerHTML = '<i class="fas fa-check"></i>';
+        this.classList.add('bg-green-500');
+        setTimeout(() => {
+          this.innerHTML = '<i class="fas fa-plus"></i>';
+          this.classList.remove('bg-green-500');
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
+  

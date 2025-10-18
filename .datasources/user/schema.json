@@ -1,0 +1,73 @@
+
+{
+  "name": "user",
+  "title": "用户表",
+  "schemas": [
+    {
+      "name": "wxUid",
+      "title": "微信用户ID",
+      "type": "String",
+      "required": true,
+      "description": "关联wechat_user表的wxUid字段"
+    },
+    {
+      "name": "phone",
+      "title": "手机号码",
+      "type": "String",
+      "required": false,
+      "description": "用户的手机号码",
+      "format": "regex",
+      "pattern": "^1[3-9]\\d{9}$"
+    },
+    {
+      "name": "is_verified",
+      "title": "是否认证",
+      "type": "Boolean",
+      "required": true,
+      "default": false,
+      "description": "用户是否完成实名认证"
+    },
+    {
+      "name": "last_login_time",
+      "title": "最后登录时间",
+      "type": "DateTime",
+      "format": "timestamp-ms",
+      "required": false,
+      "description": "用户最后登录时间"
+    },
+    {
+      "name": "preferences",
+      "title": "用户偏好",
+      "type": "Object",
+      "required": false,
+      "properties": {
+        "notification_enabled": {
+          "type": "Boolean",
+          "default": true
+        },
+        "marketing_consent": {
+          "type": "Boolean",
+          "default": false
+        },
+        "theme": {
+          "type": "String",
+          "enum": ["light", "dark", "auto"]
+        }
+      },
+      "description": "用户的个性化偏好设置"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_wxUid",
+      "keys": ["wxUid"],
+      "unique": true
+    },
+    {
+      "name": "idx_phone",
+      "keys": ["phone"],
+      "unique": false
+    }
+  ]
+}
+  

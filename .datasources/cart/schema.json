@@ -1,0 +1,47 @@
+
+{
+  "name": "cart",
+  "title": "购物车",
+  "schemas": [
+    {
+      "name": "userId",
+      "title": "用户ID",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "productId",
+      "title": "商品ID",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "quantity",
+      "title": "数量",
+      "type": "Number",
+      "required": true,
+      "default": 1
+    },
+    {
+      "name": "specification",
+      "title": "规格",
+      "type": "String",
+      "required": false
+    },
+    {
+      "name": "selected",
+      "title": "是否选中",
+      "type": "Boolean",
+      "required": true,
+      "default": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_user_product",
+      "keys": ["userId", "productId"],
+      "unique": true
+    }
+  ]
+}
+  

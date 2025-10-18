@@ -1,0 +1,70 @@
+
+[
+  {
+    "_id": "user_001",
+    "openid": "o6_bmjrPTlm6_2sgVt7hMZOPfL2M",
+    "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL2M",
+    "avatar_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+    "nickname": "张三",
+    "wechat_id": "zhangsan123",
+    "phone": "13888888888",
+    "gender": "male",
+    "country": "中国",
+    "province": "北京市",
+    "city": "北京市",
+    "language": "zh_CN",
+    "is_verified": true,
+    "last_login_time": 1694563200000,
+    "preferences": {
+      "notification_enabled": true,
+      "marketing_consent": false,
+      "theme": "light"
+    },
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "user_002",
+    "openid": "o6_bmjrPTlm6_2sgVt7hMZOPfL3M",
+    "avatar_url": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100",
+    "nickname": "李四",
+    "wechat_id": "lisi456",
+    "phone": "13999999999",
+    "gender": "female",
+    "country": "中国",
+    "province": "上海市",
+    "city": "上海市",
+    "language": "zh_CN",
+    "is_verified": false,
+    "last_login_time": 1694566800000,
+    "preferences": {
+      "notification_enabled": true,
+      "marketing_consent": true,
+      "theme": "auto"
+    },
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "user_003",
+    "openid": "o6_bmjrPTlm6_2sgVt7hMZOPfL4M",
+    "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+    "nickname": "王五",
+    "phone": "13777777777",
+    "gender": "male",
+    "country": "中国",
+    "province": "广东省",
+    "city": "广州市",
+    "language": "zh_CN",
+    "is_verified": true,
+    "last_login_time": 1694570400000,
+    "preferences": {
+      "notification_enabled": false,
+      "marketing_consent": false,
+      "theme": "dark"
+    },
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  }
+]
+  

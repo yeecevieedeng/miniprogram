@@ -1,0 +1,110 @@
+
+{
+  "name": "about_us",
+  "title": "关于我们信息",
+  "schemas": [
+    {
+      "name": "app_icon",
+      "title": "小程序图标",
+      "type": "Image",
+      "required": true,
+      "description": "小程序或应用的图标URL"
+    },
+    {
+      "name": "app_name",
+      "title": "小程序名称",
+      "type": "String",
+      "required": true,
+      "description": "小程序或应用的正式名称"
+    },
+    {
+      "name": "app_slogan",
+      "title": "小程序标语",
+      "type": "String",
+      "required": true,
+      "description": "小程序的宣传标语或口号"
+    },
+    {
+      "name": "introduction",
+      "title": "应用介绍",
+      "type": "MultiLineString",
+      "required": true,
+      "description": "应用的详细介绍文字"
+    },
+    {
+      "name": "feature_image",
+      "title": "特色图片",
+      "type": "Image",
+      "required": true,
+      "description": "展示应用特色的图片URL"
+    },
+    {
+      "name": "feature_image_caption",
+      "title": "图片说明",
+      "type": "String",
+      "required": true,
+      "description": "特色图片的说明文字"
+    },
+    {
+      "name": "advantages",
+      "title": "优势列表",
+      "type": "Array",
+      "required": true,
+      "items": {
+        "type": "Object",
+        "properties": {
+          "icon": {
+            "type": "String",
+            "required": true
+          },
+          "title": {
+            "type": "String",
+            "required": true
+          },
+          "description": {
+            "type": "String",
+            "required": true
+          }
+        }
+      },
+      "description": "应用的优势特点列表"
+    },
+    {
+      "name": "contact_info",
+      "title": "联系信息",
+      "type": "Object",
+      "required": true,
+      "properties": {
+        "phone": {
+          "type": "String",
+          "required": true
+        },
+        "email": {
+          "type": "Email",
+          "required": true
+        },
+        "address": {
+          "type": "String",
+          "required": true
+        }
+      },
+      "description": "联系客服的信息"
+    },
+    {
+      "name": "is_active",
+      "title": "是否启用",
+      "type": "Boolean",
+      "required": true,
+      "default": true,
+      "description": "是否启用该关于我们信息"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_is_active",
+      "keys": ["is_active"],
+      "unique": false
+    }
+  ]
+}
+  

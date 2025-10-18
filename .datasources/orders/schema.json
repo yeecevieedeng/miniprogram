@@ -1,0 +1,265 @@
+
+{
+  "name": "orders",
+  "title": "订单信息",
+  "schemas": [
+    {
+      "name": "order_number",
+      "title": "订单编号",
+      "type": "String",
+      "required": true,
+      "description": "系统生成的唯一订单编号"
+    },
+    {
+      "name": "user_id",
+      "title": "用户ID",
+      "type": "String",
+      "required": true,
+      "description": "下单用户的唯一标识"
+    },
+    {
+      "name": "status",
+      "title": "订单状态",
+      "type": "String",
+      "required": true,
+      "enum": [
+        "pending_payment",
+        "pending_shipment",
+        "pending_receipt",
+        "completed",
+        "cancelled",
+        "refund_processing",
+        "refund_completed"
+      ],
+      "default": "pending_payment",
+      "description": "订单当前状态"
+    },
+    {
+      "name": "total_amount",
+      "title": "订单总金额",
+      "type": "Number",
+      "required": true,
+      "description": "订单商品总金额"
+    },
+    {
+      "name": "discount_amount",
+      "title": "优惠金额",
+      "type": "Number",
+      "required": true,
+      "default": 0,
+      "description": "订单享受的优惠金额"
+    },
+    {
+      "name": "shipping_fee",
+      "title": "运费",
+      "type": "Number",
+      "required": true,
+      "default": 0,
+      "description": "订单运费金额"
+    },
+    {
+      "name": "final_amount",
+      "title": "实付金额",
+      "type": "Number",
+      "required": true,
+      "description": "用户实际支付的金额"
+    },
+    {
+      "name": "payment_method",
+      "title": "支付方式",
+      "type": "String",
+      "required": false,
+      "enum": ["wechat", "alipay", "bank_card", "cash"],
+      "description": "用户选择的支付方式"
+    },
+    {
+      "name": "items",
+      "title": "订单商品",
+      "type": "Array",
+      "required": true,
+      "items": {
+        "type": "Object",
+        "properties": {
+          "product_id": {
+            "type": "String",
+            "required": true,
+            "description": "关联商品的唯一标识"
+          },
+          "name": {
+            "type": "String",
+            "required": true,
+            "description": "商品名称"
+          },
+          "price": {
+            "type": "Number",
+            "required": true,
+            "description": "商品实际售价（从商品模型的base_price或规格选项的price同步）"
+          },
+          "original_price": {
+            "type": "Number",
+            "required": false,
+            "description": "商品原价（从商品模型的original_price同步）"
+          },
+          "quantity": {
+            "type": "Number",
+            "required": true,
+            "description": "购买数量"
+          },
+          "specification": {
+            "type": "String",
+            "required": false,
+            "description": "商品规格选项"
+          },
+          "image": {
+            "type": "Image",
+            "required": false,
+            "description": "商品图片"
+          },
+          "category_ids": {
+            "type": "Array",
+            "items": {
+              "type": "String"
+            },
+            "required": false,
+            "description": "商品所属分类ID列表"
+          }
+        }
+      },
+      "description": "订单包含的商品列表"
+    },
+    {
+      "name": "shipping_address",
+      "title": "收货地址",
+      "type": "Object",
+      "required": true,
+      "properties": {
+        "name": {
+          "type": "String",
+          "required": true
+        },
+        "phone": {
+          "type": "String",
+          "required": true
+        },
+        "province": {
+          "type": "String",
+          "required": true
+        },
+        "city": {
+          "type": "String",
+          "required": true
+        },
+        "district": {
+          "type": "String",
+          "required": true
+        },
+        "address": {
+          "type": "String",
+          "required": true
+        },
+        "postal_code": {
+          "type": "String",
+          "required": false
+        }
+      },
+      "description": "收货地址详细信息"
+    },
+    {
+      "name": "note",
+      "title": "订单备注",
+      "type": "String",
+      "required": false,
+      "description": "用户下单时填写的备注信息"
+    },
+    {
+      "name": "logistics_info",
+      "title": "物流信息",
+      "type": "Object",
+      "required": false,
+      "properties": {
+        "company": {
+          "type": "String",
+          "required": false
+        },
+        "tracking_number": {
+          "type": "String",
+          "required": false
+        },
+        "current_status": {
+          "type": "String",
+          "required": false
+        },
+        "estimated_delivery": {
+          "type": "String",
+          "required": false
+        }
+      },
+      "description": "订单物流跟踪信息"
+    },
+    {
+      "name": "after_sale_status",
+      "title": "售后状态",
+      "type": "String",
+      "required": false,
+      "enum": ["processing", "completed", "rejected"],
+      "description": "订单售后处理状态"
+    },
+    {
+      "name": "pay_time",
+      "title": "支付时间",
+      "type": "DateTime",
+      "required": false,
+      "format": "timestamp-ms",
+      "description": "订单支付完成时间"
+    },
+    {
+      "name": "ship_time",
+      "title": "发货时间",
+      "type": "DateTime",
+      "required": false,
+      "format": "timestamp-ms",
+      "description": "订单发货时间"
+    },
+    {
+      "name": "complete_time",
+      "title": "完成时间",
+      "type": "DateTime",
+      "required": false,
+      "format": "timestamp-ms",
+      "description": "订单完成时间"
+    }
+  ],
+  "permissions": {
+    "create": "owner",
+    "read": "owner",
+    "update": "owner",
+    "delete": "owner"
+  },
+  "indexes": [
+    {
+      "name": "idx_user_id",
+      "keys": ["user_id"],
+      "unique": false
+    },
+    {
+      "name": "idx_order_number",
+      "keys": ["order_number"],
+      "unique": true
+    },
+    {
+      "name": "idx_status",
+      "keys": ["status"],
+      "unique": false
+    },
+    {
+      "name": "idx_create_time",
+      "keys": ["createdAt"],
+      "unique": false
+    },
+    {
+      "name": "idx_product_id",
+      "keys": ["items.product_id"],
+      "unique": false
+    }
+  ]
+}

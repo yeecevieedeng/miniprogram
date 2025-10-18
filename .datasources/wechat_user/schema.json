@@ -1,0 +1,72 @@
+
+{
+  "name": "wechat_user",
+  "title": "微信用户信息",
+  "schemas": [
+    {
+      "name": "wxUid",
+      "title": "微信用户ID",
+      "type": "String",
+      "required": true,
+      "description": "微信用户的唯一标识，关联系统用户表的openid"
+    },
+    {
+      "name": "nickname",
+      "title": "微信昵称",
+      "type": "String",
+      "required": true,
+      "description": "微信用户的昵称"
+    },
+    {
+      "name": "avatar_url",
+      "title": "微信头像",
+      "type": "Image",
+      "required": true,
+      "description": "微信用户的头像URL"
+    },
+    {
+      "name": "gender",
+      "title": "性别",
+      "type": "String",
+      "required": false,
+      "enum": ["male", "female", "unknown"],
+      "description": "微信用户的性别"
+    },
+    {
+      "name": "country",
+      "title": "国家",
+      "type": "String",
+      "required": false,
+      "description": "微信用户所在国家"
+    },
+    {
+      "name": "province",
+      "title": "省份",
+      "type": "String",
+      "required": false,
+      "description": "微信用户所在省份"
+    },
+    {
+      "name": "city",
+      "title": "城市",
+      "type": "String",
+      "required": false,
+      "description": "微信用户所在城市"
+    },
+    {
+      "name": "language",
+      "title": "语言",
+      "type": "String",
+      "required": false,
+      "description": "微信用户的语言设置"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_wxUid",
+      "keys": ["wxUid"],
+      "unique": true
+    }
+  ]
+}
+  

@@ -1,0 +1,178 @@
+
+[
+  {
+    "_id": "prod_001",
+    "name": "当归羊肉汤",
+    "description": "精选优质当归和新鲜羊肉，采用传统工艺熬制，滋补养生，温中补虚。",
+    "origin_price": 88,
+    "rating": 4.8,
+    "sales": 1234,
+    "images": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
+      "https://images.unsplash.com/photo-1559847844-d90f569e3166?w=800",
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=800"
+    ],
+    "specifications": [
+      {
+        "name": "规格",
+        "options": [
+          {
+            "label": "小份(250ml)",
+            "value": "small",
+            "price": 58
+          },
+          {
+            "label": "标准份(350ml)",
+            "value": "standard",
+            "price": 88
+          },
+          {
+            "label": "大份(500ml)",
+            "value": "large",
+            "price": 118
+          }
+        ]
+      }
+    ],
+    "product_details": {
+      "ingredients": ["当归", "羊肉", "枸杞", "红枣", "生姜"],
+      "nutrition": "富含蛋白质、维生素和矿物质",
+      "storage": "冷藏保存，开盖后请尽快食用",
+      "shelf_life": "3天",
+      "instructions": "开盖即食，建议加热后食用口感更佳",
+      "origin": "内蒙古优质羊肉产地"
+    },
+    "reviews": [
+      {
+        "user_id": "user_001",
+        "user_name": "用户A",
+        "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100",
+        "rating": 5,
+        "content": "汤很鲜美，当归味道浓郁，羊肉也很嫩，喝完感觉很舒服。",
+        "specification": "标准份(350ml)",
+        "created_at": 1694563200000
+      },
+      {
+        "user_id": "user_002",
+        "user_name": "用户B",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+        "rating": 4,
+        "content": "包装很好，味道也不错，就是价格有点小贵。",
+        "specification": "大份(500ml)",
+        "created_at": 1694566800000
+      }
+    ],
+    "category_ids": ["qi", "all"],
+    "is_available": true,
+    "total_stock": 100,
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "prod_002",
+    "name": "花胶鸡汤",
+    "description": "选用上等花胶和散养土鸡，慢火炖煮8小时，汤色金黄，胶质丰富，美容养颜。",
+    "origin_price": 128,
+    "rating": 4.9,
+    "sales": 856,
+    "images": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800",
+      "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800"
+    ],
+    "specifications": [
+      {
+        "name": "规格",
+        "options": [
+          {
+            "label": "标准份(400ml)",
+            "value": "standard",
+            "price": 128
+          },
+          {
+            "label": "豪华份(600ml)",
+            "value": "premium",
+            "price": 188
+          }
+        ]
+      }
+    ],
+    "product_details": {
+      "ingredients": ["花胶", "土鸡", "枸杞", "红枣", "姜片"],
+      "nutrition": "富含胶原蛋白、氨基酸和多种微量元素",
+      "storage": "冷藏保存，建议3天内食用完毕",
+      "shelf_life": "5天",
+      "instructions": "加热后食用，可加入适量盐调味",
+      "origin": "广东传统炖品工艺"
+    },
+    "reviews": [
+      {
+        "user_id": "user_003",
+        "user_name": "用户C",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+        "rating": 5,
+        "content": "花胶质量很好，汤很浓郁，喝完皮肤都变好了！",
+        "specification": "豪华份(600ml)",
+        "created_at": 1694570400000
+      }
+    ],
+    "category_ids": ["yin", "all"],
+    "is_available": true,
+    "total_stock": 80,
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  },
+  {
+    "_id": "prod_003",
+    "name": "茯苓薏米汤",
+    "description": "精选茯苓、薏米等优质食材，健脾祛湿，利水消肿，适合湿气重的人群。",
+    "origin_price": 68,
+    "rating": 4.6,
+    "sales": 432,
+    "images": [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800",
+      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800"
+    ],
+    "specifications": [
+      {
+        "name": "规格",
+        "options": [
+          {
+            "label": "标准份(350ml)",
+            "value": "standard",
+            "price": 68
+          },
+          {
+            "label": "家庭装(800ml)",
+            "value": "family",
+            "price": 128
+          }
+        ]
+      }
+    ],
+    "product_details": {
+      "ingredients": ["茯苓", "薏米", "山药", "陈皮", "红枣"],
+      "nutrition": "富含膳食纤维、维生素B族和矿物质",
+      "storage": "冷藏保存，开盖后24小时内食用",
+      "shelf_life": "4天",
+      "instructions": "可直接饮用或加热后食用",
+      "origin": "云南优质药材产地"
+    },
+    "reviews": [
+      {
+        "user_id": "user_004",
+        "user_name": "用户D",
+        "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100",
+        "rating": 4,
+        "content": "祛湿效果不错，喝完感觉身体轻松了很多。",
+        "specification": "标准份(350ml)",
+        "created_at": 1694574000000
+      }
+    ],
+    "category_ids": ["pi", "all"],
+    "is_available": true,
+    "total_stock": 120,
+    "createdAt": 1694574000000,
+    "updatedAt": 1694574000000
+  }
+]
+  

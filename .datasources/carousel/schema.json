@@ -1,0 +1,117 @@
+
+{
+  "name": "carousel",
+  "title": "轮播图",
+  "schemas": [
+    {
+      "name": "title",
+      "title": "标题",
+      "type": "String",
+      "required": true,
+      "description": "轮播图的主标题"
+    },
+    {
+      "name": "subtitle",
+      "title": "副标题",
+      "type": "String",
+      "required": false,
+      "description": "轮播图的副标题或描述"
+    },
+    {
+      "name": "media_type",
+      "title": "媒体类型",
+      "type": "String",
+      "required": true,
+      "enum": ["image", "video"],
+      "default": "image",
+      "description": "轮播图媒体类型：image-图片，video-视频"
+    },
+    {
+      "name": "media_file",
+      "title": "媒体文件",
+      "type": "File",
+      "required": false,
+      "description": "轮播图的媒体文件（图片或视频），支持上传"
+    },
+    {
+      "name": "button_text",
+      "title": "按钮文字",
+      "type": "String",
+      "required": false,
+      "description": "轮播图上显示的按钮文字"
+    },
+    {
+      "name": "link_type",
+      "title": "链接类型",
+      "type": "String",
+      "required": true,
+      "enum": ["page", "product", "category", "external"],
+      "default": "page",
+      "description": "点击轮播图后的跳转类型"
+    },
+    {
+      "name": "link_target",
+      "title": "链接目标",
+      "type": "String",
+      "required": false,
+      "description": "具体的链接目标，如页面ID、商品ID、分类ID或外部URL"
+    },
+    {
+      "name": "link_params",
+      "title": "链接参数",
+      "type": "Object",
+      "required": false,
+      "description": "跳转时携带的参数，JSON对象格式"
+    },
+    {
+      "name": "display_order",
+      "title": "显示顺序",
+      "type": "Number",
+      "required": true,
+      "default": 0,
+      "description": "轮播图的显示顺序，数字越小越靠前"
+    },
+    {
+      "name": "start_time",
+      "title": "开始时间",
+      "type": "DateTime",
+      "format": "timestamp-ms",
+      "required": false,
+      "description": "轮播图开始显示的时间"
+    },
+    {
+      "name": "end_time",
+      "title": "结束时间",
+      "type": "DateTime",
+      "format": "timestamp-ms",
+      "required": false,
+      "description": "轮播图结束显示的时间"
+    },
+    {
+      "name": "is_active",
+      "title": "是否启用",
+      "type": "Boolean",
+      "required": true,
+      "default": true,
+      "description": "轮播图是否启用显示"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_display_order",
+      "keys": ["display_order"],
+      "unique": false
+    },
+    {
+      "name": "idx_is_active",
+      "keys": ["is_active"],
+      "unique": false
+    },
+    {
+      "name": "idx_start_end_time",
+      "keys": ["start_time", "end_time"],
+      "unique": false
+    }
+  ]
+}
+  

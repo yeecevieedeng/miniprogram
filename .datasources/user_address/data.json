@@ -1,0 +1,79 @@
+
+[
+  {
+    "_id": "addr_001",
+    "user_id": "user_001",
+    "name": "张三",
+    "phone": "13888888888",
+    "province": "北京市",
+    "city": "北京市",
+    "district": "朝阳区",
+    "address": "建国路88号SOHO现代城A座1201室",
+    "postal_code": "100022",
+    "is_default": true,
+    "label": "公司",
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "addr_002",
+    "user_id": "user_001",
+    "name": "张三",
+    "phone": "13888888888",
+    "province": "北京市",
+    "city": "北京市",
+    "district": "海淀区",
+    "address": "中关村大街1号海龙大厦1502室",
+    "postal_code": "100080",
+    "is_default": false,
+    "label": "家",
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "addr_003",
+    "user_id": "user_002",
+    "name": "李四",
+    "phone": "13999999999",
+    "province": "上海市",
+    "city": "上海市",
+    "district": "浦东新区",
+    "address": "陆家嘴环路1000号东方明珠大厦B座1502室",
+    "postal_code": "200120",
+    "is_default": true,
+    "label": "公司",
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  },
+  {
+    "_id": "addr_004",
+    "user_id": "user_003",
+    "name": "王五",
+    "phone": "13777777777",
+    "province": "广东省",
+    "city": "广州市",
+    "district": "天河区",
+    "address": "珠江新城华夏路10号财富广场C座2003室",
+    "postal_code": "510623",
+    "is_default": true,
+    "label": "公司",
+    "createdAt": 1694574000000,
+    "updatedAt": 1694574000000
+  },
+  {
+    "_id": "addr_005",
+    "user_id": "user_003",
+    "name": "王五",
+    "phone": "13777777777",
+    "province": "广东省",
+    "city": "深圳市",
+    "district": "南山区",
+    "address": "科技园中区科苑路15号科兴科学园A栋3单元501",
+    "postal_code": "518057",
+    "is_default": false,
+    "label": "家",
+    "createdAt": 1694577600000,
+    "updatedAt": 1694577600000
+  }
+]
+  

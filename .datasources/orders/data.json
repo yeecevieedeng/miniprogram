@@ -1,0 +1,191 @@
+
+[
+  {
+    "_id": "order_001",
+    "order_number": "202412010001",
+    "user_id": "user_001",
+    "status": "pending_payment",
+    "total_amount": 88,
+    "discount_amount": 10,
+    "shipping_fee": 0,
+    "final_amount": 78,
+    "payment_method": "wechat",
+    "items": [
+      {
+        "product_id": "prod_001",
+        "name": "当归羊肉汤",
+        "price": 88,
+        "quantity": 1,
+        "specification": "大份",
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300",
+        "original_price": 98
+      }
+    ],
+    "shipping_address": {
+      "name": "张三",
+      "phone": "13888888888",
+      "province": "北京市",
+      "city": "北京市",
+      "district": "朝阳区",
+      "address": "建国路88号SOHO现代城A座1201室",
+      "postal_code": "100022"
+    },
+    "note": "请尽快发货，谢谢",
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "order_002",
+    "order_number": "202412010002",
+    "user_id": "user_001",
+    "status": "pending_shipment",
+    "total_amount": 58,
+    "discount_amount": 5,
+    "shipping_fee": 0,
+    "final_amount": 53,
+    "payment_method": "alipay",
+    "items": [
+      {
+        "product_id": "prod_002",
+        "name": "山药排骨汤",
+        "price": 58,
+        "quantity": 1,
+        "specification": "标准份",
+        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=300"
+      }
+    ],
+    "shipping_address": {
+      "name": "张三",
+      "phone": "13888888888",
+      "province": "北京市",
+      "city": "北京市",
+      "district": "海淀区",
+      "address": "中关村大街1号海龙大厦1502室",
+      "postal_code": "100080"
+    },
+    "pay_time": 1694566800000,
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "order_003",
+    "order_number": "202412010003",
+    "user_id": "user_002",
+    "status": "pending_receipt",
+    "total_amount": 168,
+    "discount_amount": 15,
+    "shipping_fee": 5,
+    "final_amount": 158,
+    "payment_method": "wechat",
+    "items": [
+      {
+        "product_id": "prod_003",
+        "name": "花胶鸡汤",
+        "price": 168,
+        "quantity": 1,
+        "specification": "豪华份",
+        "image": "https://images.unsplash.com/photo-1559847844-d90f569e3166?w=300",
+        "original_price": 188
+      }
+    ],
+    "shipping_address": {
+      "name": "李四",
+      "phone": "13999999999",
+      "province": "上海市",
+      "city": "上海市",
+      "district": "浦东新区",
+      "address": "陆家嘴环路1000号东方明珠大厦B座1502室",
+      "postal_code": "200120"
+    },
+    "logistics_info": {
+      "company": "顺丰速运",
+      "tracking_number": "SF1234567890123",
+      "current_status": "运输中",
+      "estimated_delivery": "2024-12-02 18:00"
+    },
+    "pay_time": 1694570400000,
+    "ship_time": 1694574000000,
+    "createdAt": 1694570400000,
+    "updatedAt": 1694574000000
+  },
+  {
+    "_id": "order_004",
+    "order_number": "202412010004",
+    "user_id": "user_003",
+    "status": "completed",
+    "total_amount": 156,
+    "discount_amount": 20,
+    "shipping_fee": 0,
+    "final_amount": 136,
+    "payment_method": "alipay",
+    "items": [
+      {
+        "product_id": "prod_004",
+        "name": "有机西红柿",
+        "price": 12.8,
+        "quantity": 2,
+        "specification": "500g/份",
+        "image": "https://images.unsplash.com/photo-1561136594-7f68413baa99?w=300"
+      },
+      {
+        "product_id": "prod_005",
+        "name": "有机胡萝卜",
+        "price": 6.8,
+        "quantity": 1,
+        "specification": "1kg/份",
+        "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=300"
+      }
+    ],
+    "shipping_address": {
+      "name": "王五",
+      "phone": "13777777777",
+      "province": "广东省",
+      "city": "广州市",
+      "district": "天河区",
+      "address": "珠江新城华夏路10号财富广场C座2003室",
+      "postal_code": "510623"
+    },
+    "pay_time": 1694577600000,
+    "ship_time": 1694581200000,
+    "complete_time": 1694584800000,
+    "createdAt": 1694577600000,
+    "updatedAt": 1694584800000
+  },
+  {
+    "_id": "order_005",
+    "order_number": "202412010005",
+    "user_id": "user_003",
+    "status": "refund_processing",
+    "total_amount": 88,
+    "discount_amount": 10,
+    "shipping_fee": 0,
+    "final_amount": 78,
+    "payment_method": "wechat",
+    "items": [
+      {
+        "product_id": "prod_001",
+        "name": "当归羊肉汤",
+        "price": 88,
+        "quantity": 1,
+        "specification": "大份",
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300"
+      }
+    ],
+    "shipping_address": {
+      "name": "王五",
+      "phone": "13777777777",
+      "province": "广东省",
+      "city": "深圳市",
+      "district": "南山区",
+      "address": "科技园中区科苑路15号科兴科学园A栋3单元501",
+      "postal_code": "518057"
+    },
+    "after_sale_status": "processing",
+    "pay_time": 1694588400000,
+    "ship_time": 1694592000000,
+    "complete_time": 1694595600000,
+    "createdAt": 1694588400000,
+    "updatedAt": 1694599200000
+  }
+]
+  

@@ -1,0 +1,32 @@
+
+[
+  {
+    "_id": "user_001",
+    "wxUid": "wx_123456789",
+    "phone": "13888888888",
+    "is_verified": true,
+    "last_login_time": 1694563200000,
+    "preferences": {
+      "notification_enabled": true,
+      "marketing_consent": false,
+      "theme": "light"
+    },
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "user_002",
+    "wxUid": "wx_987654321",
+    "phone": "13999999999",
+    "is_verified": false,
+    "last_login_time": 1694566800000,
+    "preferences": {
+      "notification_enabled": true,
+      "marketing_consent": true,
+      "theme": "auto"
+    },
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  }
+]
+  

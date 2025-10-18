@@ -1,0 +1,34 @@
+
+[
+  {
+    "_id": "cart_001",
+    "userId": "user_001",
+    "productId": "prod_001",
+    "quantity": 1,
+    "specification": "标准规格",
+    "selected": true,
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "cart_002",
+    "userId": "user_001",
+    "productId": "prod_002",
+    "quantity": 2,
+    "specification": "大份",
+    "selected": true,
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "cart_003",
+    "userId": "user_001",
+    "productId": "prod_003",
+    "quantity": 1,
+    "specification": "标准规格",
+    "selected": false,
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  }
+]
+  

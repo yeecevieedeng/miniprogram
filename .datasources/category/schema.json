@@ -1,0 +1,77 @@
+
+{
+  "name": "category",
+  "title": "商品分类",
+  "schemas": [
+    {
+      "name": "name",
+      "title": "分类名称",
+      "type": "String",
+      "required": true,
+      "description": "分类的中文名称"
+    },
+    {
+      "name": "icon",
+      "title": "分类图标",
+      "type": "String",
+      "required": true,
+      "description": "分类的图标标识（emoji或图标代码）"
+    },
+    {
+      "name": "color",
+      "title": "分类颜色",
+      "type": "String",
+      "required": true,
+      "description": "分类的主题颜色（Tailwind CSS 颜色类）"
+    },
+    {
+      "name": "description",
+      "title": "分类描述",
+      "type": "String",
+      "required": false,
+      "description": "分类的详细描述信息"
+    },
+    {
+      "name": "sort_order",
+      "title": "排序顺序",
+      "type": "Number",
+      "required": true,
+      "default": 0,
+      "description": "分类的显示排序顺序"
+    },
+    {
+      "name": "is_active",
+      "title": "是否启用",
+      "type": "Boolean",
+      "required": true,
+      "default": true,
+      "description": "分类是否启用显示"
+    },
+    {
+      "name": "product_count",
+      "title": "商品数量",
+      "type": "Number",
+      "required": false,
+      "default": 0,
+      "description": "该分类下的商品数量（动态计算）"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_name",
+      "keys": ["name"],
+      "unique": true
+    },
+    {
+      "name": "idx_sort_order",
+      "keys": ["sort_order"],
+      "unique": false
+    },
+    {
+      "name": "idx_is_active",
+      "keys": ["is_active"],
+      "unique": false
+    }
+  ]
+}
+  

@@ -1,0 +1,88 @@
+
+[
+  {
+    "_id": "qi",
+    "name": "补气养元",
+    "icon": "🌿",
+    "color": "bg-green-100",
+    "description": "补气养元类汤品，适合气虚体质人群",
+    "sort_order": 1,
+    "is_active": true,
+    "product_count": 1,
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "pi",
+    "name": "健脾祛湿",
+    "icon": "🍵",
+    "color": "bg-yellow-100",
+    "description": "健脾祛湿类汤品，适合脾虚湿重人群",
+    "sort_order": 2,
+    "is_active": true,
+    "product_count": 1,
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "yin",
+    "name": "滋阴润燥",
+    "icon": "❄️",
+    "color": "bg-blue-100",
+    "description": "滋阴润燥类汤品，适合阴虚燥热人群",
+    "sort_order": 3,
+    "is_active": true,
+    "product_count": 1,
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  },
+  {
+    "_id": "xue",
+    "name": "活血养心",
+    "icon": "❤️",
+    "color": "bg-red-100",
+    "description": "活血养心类汤品，适合血瘀心慌人群",
+    "sort_order": 4,
+    "is_active": true,
+    "product_count": 0,
+    "createdAt": 1694574000000,
+    "updatedAt": 1694574000000
+  },
+  {
+    "_id": "jun",
+    "name": "菌菇滋补",
+    "icon": "🍄",
+    "color": "bg-purple-100",
+    "description": "菌菇滋补类汤品，富含多种营养成分",
+    "sort_order": 5,
+    "is_active": true,
+    "product_count": 0,
+    "createdAt": 1694577600000,
+    "updatedAt": 1694577600000
+  },
+  {
+    "_id": "shen",
+    "name": "安神调和",
+    "icon": "🌙",
+    "color": "bg-indigo-100",
+    "description": "安神调合类汤品，适合失眠焦虑人群",
+    "sort_order": 6,
+    "is_active": true,
+    "product_count": 0,
+    "createdAt": 1694581200000,
+    "updatedAt": 1694581200000
+  },
+  {
+    "_id": "all",
+    "name": "全部",
+    "icon": "📦",
+    "color": "bg-gray-100",
+    "description": "所有汤品分类",
+    "sort_order": 0,
+    "is_active": true,
+    "product_count": 3,
+    "createdAt": 1694584800000,
+    "updatedAt": 1694584800000
+  }
+]
+  

@@ -1,0 +1,30 @@
+
+[
+  {
+    "_id": "wechat_001",
+    "wxUid": "wx_123456789",
+    "nickname": "微信用户_001",
+    "avatar_url": "https://thirdwx.qlogo.cn/mmopen/vi_32/xxxx",
+    "gender": "male",
+    "country": "中国",
+    "province": "北京市",
+    "city": "北京市",
+    "language": "zh_CN",
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "wechat_002",
+    "wxUid": "wx_987654321",
+    "nickname": "微信用户_002",
+    "avatar_url": "https://thirdwx.qlogo.cn/mmopen/vi_32/yyyy",
+    "gender": "female",
+    "country": "中国",
+    "province": "上海市",
+    "city": "上海市",
+    "language": "zh_CN",
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  }
+]
+  

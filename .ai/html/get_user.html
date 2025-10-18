@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取用户信息</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .avatar-upload {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #f5f5f5;
+      border: 2px dashed #ccc;
+    }
+    .avatar-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .upload-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #999;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-md">
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h1 class="text-2xl font-bold text-center mb-6">完善个人信息</h1>
+      
+      <!-- 头像上传区域 -->
+      <div class="mb-8">
+        <label class="block text-sm font-medium text-gray-700 mb-2 text-center">微信头像</label>
+        <div class="avatar-upload" id="avatarContainer">
+          <input type="file" id="avatarInput" accept="image/*" class="hidden" 
+                 data-wechat-avatar="true">
+          <img id="avatarPreview" class="avatar-preview hidden">
+          <div class="upload-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 昵称输入区域 -->
+      <div class="mb-8">
+        <label for="nickname" class="block text-sm font-medium text-gray-700 mb-2">微信昵称</label>
+        <input type="text" id="nickname" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+               placeholder="请输入昵称" data-wechat-nickname="true">
+      </div>
+      
+      <!-- 提交按钮 -->
+      <button id="submitBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200">
+        保存信息
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const avatarInput = document.getElementById('avatarInput');
+      const avatarPreview = document.getElementById('avatarPreview');
+      const avatarContainer = document.getElementById('avatarContainer');
+      const nicknameInput = document.getElementById('nickname');
+      const submitBtn = document.getElementById('submitBtn');
+      
+      // 模拟微信获取头像
+      avatarInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            avatarPreview.src = event.target.result;
+            avatarPreview.classList.remove('hidden');
+            avatarContainer.querySelector('.upload-icon').style.display = 'none';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      // 模拟微信获取昵称
+      if (window.wx && window.wx.getUserProfile) {
+        nicknameInput.addEventListener('focus', function() {
+          wx.getUserProfile({
+            success: function(res) {
+              nicknameInput.value = res.userInfo.nickName;
+            }
+          });
+        });
+      }
+      
+      // 提交数据
+      submitBtn.addEventListener('click', function() {
+        const avatar = avatarInput.files[0] ? avatarPreview.src : null;
+        const nickname = nicknameInput.value;
+        const userId = 'current-user-id'; // 实际应用中从微搭获取 $w.auth.currentUser.userId
+        
+        console.log('提交数据:', {
+          avatar: avatar,
+          nickname: nickname,
+          userId: userId
+        });
+        
+        // 这里可以添加实际的数据提交逻辑
+        alert('信息保存成功！');
+      });
+    });
+  </script>
+</body>
+</html>
+  

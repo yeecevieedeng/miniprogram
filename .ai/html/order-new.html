@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新订单 - 商品选择</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .product-card {
+            aspect-ratio: 4/3;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            height: 60%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold mb-6">选择商品</h1>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <!-- 商品卡片1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                     alt="商品1" class="w-full product-image">
+                <div class="p-3">
+                    <h3 class="font-semibold text-sm truncate">男士机械手表 商务休闲防水</h3>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-red-500 font-bold">¥299</span>
+                        <button class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品卡片2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                     alt="商品2" class="w-full product-image">
+                <div class="p-3">
+                    <h3 class="font-semibold text-sm truncate">无线蓝牙耳机 降噪运动款</h3>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-red-500 font-bold">¥199</span>
+                        <button class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品卡片3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                     alt="商品3" class="w-full product-image">
+                <div class="p-3">
+                    <h3 class="font-semibold text-sm truncate">头戴式耳机 专业音乐发烧</h3>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-red-500 font-bold">¥599</span>
+                        <button class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品卡片4 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                     alt="商品4" class="w-full product-image">
+                <div class="p-3">
+                    <h3 class="font-semibold text-sm truncate">运动跑鞋 轻便透气减震</h3>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-red-500 font-bold">¥399</span>
+                        <button class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部购物车栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 border-t border-gray-200">
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-gray-600">共 <span id="cart-count">0</span> 件</span>
+                    <span class="text-red-500 font-bold ml-2">¥<span id="cart-total">0</span></span>
+                </div>
+                <button class="bg-blue-500 text-white px-6 py-2 rounded-full disabled:opacity-50" disabled>
+                    去结算
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 购物车功能实现
+        let cart = [];
+        const addButtons = document.querySelectorAll('.product-card button');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.querySelector('.bg-blue-500');
+
+        addButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.product-card');
+                const productName = card.querySelector('h3').textContent;
+                const productPrice = parseFloat(card.querySelector('span.text-red-500').textContent.replace('¥', ''));
+                
+                cart.push({
+                    name: productName,
+                    price: productPrice
+                });
+                
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartCount.textContent = cart.length;
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.textContent = total.toFixed(2);
+            
+            checkoutBtn.disabled = cart.length === 0;
+        }
+    </script>
+</body>
+</html>
+  

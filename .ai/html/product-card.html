@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品列表</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .product-card {
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 p-4">
+  <div class="max-w-md mx-auto">
+    <!-- 商品卡片示例 -->
+    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden mb-4 cursor-pointer" onclick="window.location.href='product-detail.html?id=1'">
+      <div class="flex">
+        <!-- 商品图片 -->
+        <div class="w-32 h-32 bg-gray-200 flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format" 
+               alt="商品图片" 
+               class="w-full h-full object-cover">
+        </div>
+        
+        <!-- 商品信息 -->
+        <div class="p-4 flex-grow">
+          <!-- 商品名称 -->
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">无线蓝牙耳机</h3>
+          
+          <!-- 商品描述 -->
+          <p class="text-sm text-gray-600 mb-2 line-clamp-2">高保真音质，降噪功能，续航长达20小时，舒适佩戴体验</p>
+          
+          <!-- 商品价格 -->
+          <div class="flex items-center mb-2">
+            <span class="text-red-500 font-bold text-lg">¥199</span>
+            <span class="text-gray-400 text-sm line-through ml-2">¥299</span>
+          </div>
+          
+          <!-- 加入购物车按钮 -->
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm flex items-center"
+                  onclick="event.stopPropagation();addToCart(1)">
+            <i class="fas fa-shopping-cart mr-2"></i>
+            加入购物车
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二个商品卡片 -->
+    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden mb-4 cursor-pointer" onclick="window.location.href='product-detail.html?id=2'">
+      <div class="flex">
+        <div class="w-32 h-32 bg-gray-200 flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format" 
+               alt="商品图片" 
+               class="w-full h-full object-cover">
+        </div>
+        
+        <div class="p-4 flex-grow">
+          <h3 class="text-lg font-semibold text-gray-800 mb-1">智能手表</h3>
+          <p class="text-sm text-gray-600 mb-2 line-clamp-2">心率监测，运动追踪，50米防水，7天续航</p>
+          <div class="flex items-center mb-2">
+            <span class="text-red-500 font-bold text-lg">¥599</span>
+            <span class="text-gray-400 text-sm line-through ml-2">¥799</span>
+          </div>
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm flex items-center"
+                  onclick="event.stopPropagation();addToCart(2)">
+            <i class="fas fa-shopping-cart mr-2"></i>
+            加入购物车
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(productId) {
+      // 这里添加购物车逻辑
+      console.log('已添加商品ID:', productId);
+      alert('商品已添加到购物车');
+      
+      // 实际项目中这里会有API调用
+      // fetch('/api/cart/add', {
+      //   method: 'POST',
+      //   body: JSON.stringify({ productId }),
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //   // 更新购物车状态
+      // });
+    }
+  </script>
+</body>
+</html>
+  

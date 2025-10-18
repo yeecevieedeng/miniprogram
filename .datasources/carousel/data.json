@@ -1,0 +1,49 @@
+
+[
+  {
+    "_id": "carousel_001",
+    "title": "养生汤品，健康每一天",
+    "subtitle": "精选食材，传统工艺，为您带来最地道的养生汤品",
+    "media_type": "image",
+    "button_text": "立即选购",
+    "link_type": "page",
+    "link_target": "order-new",
+    "display_order": 1,
+    "is_active": true,
+    "createdAt": 1694563200000,
+    "updatedAt": 1694563200000
+  },
+  {
+    "_id": "carousel_002",
+    "title": "秋季滋补特惠",
+    "subtitle": "精选秋季养生汤品，限时8折优惠",
+    "media_type": "image",
+    "button_text": "查看优惠",
+    "link_type": "page",
+    "link_target": "order-new",
+    "display_order": 2,
+    "is_active": true,
+    "createdAt": 1694566800000,
+    "updatedAt": 1694566800000
+  },
+  {
+    "_id": "carousel_003",
+    "title": "新品上市",
+    "subtitle": "花胶鸡汤，美容养颜，滋阴润燥",
+    "media_type": "image",
+    "button_text": "立即尝鲜",
+    "link_type": "product",
+    "link_target": "prod_002",
+    "link_params": {
+      "id": "prod_002",
+      "name": "花胶鸡汤",
+      "price": 128,
+      "description": "美容养颜，滋阴润燥"
+    },
+    "display_order": 3,
+    "is_active": true,
+    "createdAt": 1694570400000,
+    "updatedAt": 1694570400000
+  }
+]
+  

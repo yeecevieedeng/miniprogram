@@ -1,0 +1,148 @@
+
+{
+  "name": "user_profile",
+  "title": "用户个人资料",
+  "schemas": [
+    {
+      "name": "openid",
+      "title": "微信OpenID",
+      "type": "String",
+      "required": true,
+      "description": "微信用户的唯一标识OpenID"
+    },
+    {
+      "name": "unionid",
+      "title": "微信UnionID",
+      "type": "String",
+      "required": false,
+      "description": "微信开放平台的UnionID"
+    },
+    {
+      "name": "avatar_url",
+      "title": "微信头像",
+      "type": "Image",
+      "required": true,
+      "description": "微信用户的头像URL"
+    },
+    {
+      "name": "nickname",
+      "title": "微信昵称",
+      "type": "String",
+      "required": true,
+      "description": "微信用户的昵称"
+    },
+    {
+      "name": "wechat_id",
+      "title": "微信号",
+      "type": "String",
+      "required": false,
+      "description": "用户的微信号"
+    },
+    {
+      "name": "phone",
+      "title": "手机号码",
+      "type": "String",
+      "required": false,
+      "description": "用户的手机号码",
+      "format": "regex",
+      "pattern": "^1[3-9]\\d{9}$"
+    },
+    {
+      "name": "gender",
+      "title": "性别",
+      "type": "String",
+      "required": false,
+      "enum": ["male", "female", "other"],
+      "description": "用户性别"
+    },
+    {
+      "name": "country",
+      "title": "国家",
+      "type": "String",
+      "required": false,
+      "description": "用户所在国家"
+    },
+    {
+      "name": "province",
+      "title": "省份",
+      "type": "String",
+      "required": false,
+      "description": "用户所在省份"
+    },
+    {
+      "name": "city",
+      "title": "城市",
+      "type": "String",
+      "required": false,
+      "description": "用户所在城市"
+    },
+    {
+      "name": "language",
+      "title": "语言",
+      "type": "String",
+      "required": false,
+      "description": "用户语言设置"
+    },
+    {
+      "name": "is_verified",
+      "title": "是否认证",
+      "type": "Boolean",
+      "required": true,
+      "default": false,
+      "description": "用户是否完成实名认证"
+    },
+    {
+      "name": "last_login_time",
+      "title": "最后登录时间",
+      "type": "DateTime",
+      "required": false,
+      "format": "timestamp-ms",
+      "description": "用户最后登录时间"
+    },
+    {
+      "name": "preferences",
+      "title": "用户偏好",
+      "type": "Object",
+      "required": false,
+      "properties": {
+        "notification_enabled": {
+          "type": "Boolean",
+          "default": true
+        },
+        "marketing_consent": {
+          "type": "Boolean",
+          "default": false
+        },
+        "theme": {
+          "type": "String",
+          "enum": ["light", "dark", "auto"]
+        }
+      },
+      "description": "用户的个性化偏好设置"
+    }
+  ],
+  "permissions": {
+    "create": "owner",
+    "read": "owner",
+    "update": "owner",
+    "delete": "owner"
+  },
+  "indexes": [
+    {
+      "name": "idx_openid",
+      "keys": ["openid"],
+      "unique": true
+    },
+    {
+      "name": "idx_unionid",
+      "keys": ["unionid"],
+      "unique": false
+    },
+    {
+      "name": "idx_phone",
+      "keys": ["phone"],
+      "unique": false
+    }
+  ]
+}
+  
