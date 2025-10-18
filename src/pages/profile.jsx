@@ -1,7 +1,7 @@
 // @ts-ignore;
 import React, { useState, useEffect } from 'react';
 // @ts-ignore;
-import { User, ShoppingBag, MapPin, LogOut, ChevronRight, Info, LogIn, Phone, VenusMars, Mail, Calendar, RefreshCw } from 'lucide-react';
+import { User, ShoppingBag, MapPin, LogOut, ChevronRight, Info, LogIn, Phone, Mail, Calendar } from 'lucide-react';
 // @ts-ignore;
 import { Card, CardContent, Avatar, AvatarImage, AvatarFallback, Button, useToast } from '@/components/ui';
 
@@ -13,13 +13,11 @@ function ProfileHeader(props) {
     wechatData,
     onEditProfile,
     onWechatLogin,
-    onRefresh,
     isLoading,
     isLoggedIn
   } = props;
   const displayName = wechatData?.nickname || userData?.nickname || '未登录用户';
   const displayAvatar = wechatData?.avatar_url || userData?.avatar_url || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100';
-  const displayGender = wechatData?.gender || userData?.gender;
   const displayEmail = userData?.email;
   const memberSince = userData?.createdAt ? new Date(userData.createdAt).toLocaleDateString('zh-CN') : null;
   return <Card className="m-4 shadow-md rounded-xl border-0">
@@ -41,14 +39,9 @@ function ProfileHeader(props) {
                     <h2 className="text-xl font-bold text-gray-800 truncate">{displayName}</h2>
                     {memberSince && <p className="text-xs text-gray-500 mt-1">会员自 {memberSince}</p>}
                   </div>
-                  <div className="flex space-x-2">
-                    <Button variant="ghost" size="sm" onClick={onRefresh} className="text-gray-600 hover:bg-gray-50 active:bg-gray-100 transition-colors p-2">
-                      <RefreshCw className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="sm" onClick={onEditProfile} className="text-blue-600 hover:bg-blue-50 active:bg-blue-100 transition-colors px-3 py-1 text-sm">
-                      编辑资料
-                    </Button>
-                  </div>
+                  <Button variant="ghost" size="sm" onClick={onEditProfile} className="text-blue-600 hover:bg-blue-50 active:bg-blue-100 transition-colors px-3 py-1 text-sm">
+                    编辑资料
+                  </Button>
                 </div>
                 
                 <div className="space-y-2">
@@ -61,18 +54,13 @@ function ProfileHeader(props) {
                       <Mail className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
                       <span className="truncate">{displayEmail}</span>
                     </div>}
-                  
-                  {displayGender && <div className="flex items-center text-sm text-gray-600">
-                      <VenusMars className="w-4 h-4 text-pink-400 mr-2 flex-shrink-0" />
-                      <span>{displayGender === 'male' ? '男' : displayGender === 'female' ? '女' : '其他'}</span>
-                    </div>}
                 </div>
               </div> : <div className="space-y-4">
                 <h2 className="text-xl font-bold text-gray-800">未登录</h2>
                 <p className="text-sm text-gray-500">请登录以查看个人信息和享受会员权益</p>
-                <Button variant="default" size="sm" onClick={onWechatLogin} className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 w-full">
-                  <LogIn className="w-5 h-5 mr-2" />
-                  微信一键登录
+                <Button variant="default" size="lg" onClick={onWechatLogin} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 w-full rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
+                  <LogIn className="w-6 h-6 mr-3" />
+                  <span className="text-base font-medium">微信一键登录</span>
                 </Button>
                 <p className="text-xs text-gray-400 text-center">登录后即可查看订单、管理地址等信息</p>
               </div>}
@@ -139,7 +127,6 @@ export default function Profile(props) {
   const [userData, setUserData] = useState(null);
   const [wechatData, setWechatData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [isRefreshing, setIsRefreshing] = useState(false);
   const [authState, setAuthState] = useState($w.auth.currentUser);
   const {
     toast
@@ -204,7 +191,6 @@ export default function Profile(props) {
       });
     } finally {
       setIsLoading(false);
-      setIsRefreshing(false);
     }
   };
 
@@ -232,15 +218,6 @@ export default function Profile(props) {
       fetchUserData();
     }
   }, [$w.page.dataset.params]);
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    fetchUserData();
-    toast({
-      title: '刷新中',
-      description: '正在获取最新用户信息...',
-      variant: 'default'
-    });
-  };
   const handleWechatLogin = async () => {
     $w.utils.navigateTo({
       pageId: 'get_user'
@@ -335,7 +312,7 @@ export default function Profile(props) {
         </div>
       </div>
 
-      <ProfileHeader userData={userData} wechatData={wechatData} onEditProfile={handleEditProfile} onWechatLogin={handleWechatLogin} onRefresh={handleRefresh} isLoading={isLoading} isLoggedIn={isLoggedIn} />
+      <ProfileHeader userData={userData} wechatData={wechatData} onEditProfile={handleEditProfile} onWechatLogin={handleWechatLogin} isLoading={isLoading} isLoggedIn={isLoggedIn} />
 
       <OrderEntry isLoggedIn={isLoggedIn} onWechatLogin={handleWechatLogin} />
 
